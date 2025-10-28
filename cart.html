@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce Cart page</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header class="cartheader">
+        <a href="./index.html">HOME</a>
+        <h1>Mini E-Shop</h1>
+    </header>
+    <main class="parent-cart">
+        <div class="child1">
+            <div class="cartlist">
+               
+            </div>
+        </div>
+        <div class="child2">
+            <h1 style="text-align: center;">PRICE DETAILS</h1>
+            <div class="totalamnt" style="text-align: center;">
+                <h3>Price(0 items) ₹0</h3>
+                <p>Discount- ₹0</p>
+                <p>Buy more & save more- ₹0</p>
+                <p>Protect Promise Fee- ₹0</p>
+                <hr>
+                <h1>Total Amount ₹0</h1>
+            </div>
+            <div class="placeorder">
+                <button type="submit">Place Order</button>
+            </div>
+        </div>
+    </main>
+    <script  src="./script/cart.js"></script>
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                registrations.forEach(reg => reg.register());
+            });
+        });
+    }
+    </script>
+</body>
+</html>

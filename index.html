@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Commerce</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header id="Mainheader">
+        <h1>Mini E-Shop</h1>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-bar" placeholder="Search products...">
+        </div>
+        <div id="authSection">
+    <button id="loginBtn">Login</button>
+    <span id="welcome" style="display:none;"></span>
+    <button id="logoutBtn" style="display:none;">Logout</button>
+  </div>
+        <a href="./cart.html" class="cart-link"><i class="fa-solid fa-cart-shopping"></i>(0)</a>
+    </header>
+    <main class="main">     
+      <div class="product-grid" id="product-list"></div>
+    </main>
+    <footer>
+        <div class="footer-section social">
+            <h4>Social</h4>
+            <div class="icons">
+                <a target="_blank" href="https://www.facebook.com/login.php/"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://x.com/i/flow/login"><i class="fa-brands fa-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2025 Mini E-Commerce</p>
+    </footer>
+    <script src="./script/index.js"></script>
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                registrations.forEach(reg => reg.register());
+            });
+        });
+    }
+    </script>
+</body>
+</html>
